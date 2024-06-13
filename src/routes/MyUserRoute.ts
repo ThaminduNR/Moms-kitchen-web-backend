@@ -15,4 +15,6 @@ routes.put(
   MyUserController.updateCurrentUser
 );
 
+routes.get("/", jwtCheck, jwtParse, MyUserController.getCurrentUser)
+
 export default routes;
