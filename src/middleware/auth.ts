@@ -40,7 +40,7 @@ export const jwtParse = async (
     }
 
     req.auth0Id = auth0Id;
-    req.userId = user._id.toString();
+    req.userId = user._id?.toString();
     next();
 
 
