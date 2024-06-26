@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import myUserRoute from "./routes/MyUserRoute";
 import { v2 as cloudinary } from "cloudinary";
 import myRestaurantRoute from "./routes/MyRestaurantRoute";
+import restaurentRoute from "./routes/RestaurentRoute";
 
 // connect DB
 mongoose
@@ -26,11 +27,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// verfy Connect DB
-app.listen(7000, () => {
-  console.log("Server is running on port 7000");
-});
-
 //API routes
 
 // /api/my/user
@@ -38,3 +34,10 @@ app.use("/api/my/user", myUserRoute);
 
 // /api/my/restaurant
 app.use("/api/my/restaurant", myRestaurantRoute);
+
+app.use("/api/restaurent", restaurentRoute);
+
+// verfy Connect DB
+app.listen(7000, () => {
+  console.log("Server is running on port 7000");
+});
